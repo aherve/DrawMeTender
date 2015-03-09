@@ -1,10 +1,14 @@
 Drawer = function(canvasId){
   this.canvasId = canvasId;
-  this.color = "#cbc53d";//    colors = ["#828b20", "#b0ac31", "#cbc53d", "#fad779", "#f9e4ad", "#faf2db", "#563512", "#9b4a0b", "#d36600", "#fe8a00", "#f9a71f"];
-  this.stroke = 8;
+  this.stroke = 10;
+}
+
+Drawer.prototype.setColor = function(color){
+  this.color = color;
 }
 
 Drawer.prototype.init = function() {
+  this.setColor("#000000")
   this.stage = new createjs.Stage(document.getElementById(this.canvasId));
   this.stage.addEventListener("stagemousedown", this.handleMouseDown());
   this.stage.addEventListener("stagemouseup", this.handleMouseUp());
@@ -23,7 +27,6 @@ Drawer.prototype.init = function() {
 }
 
 Drawer.prototype.handleMouseDown = function() {
-  console.log("mouse down")
   var obj = this;
   return function(event){
     if (!event.primary) { return; }
@@ -41,7 +44,6 @@ Drawer.prototype.handleMouseDown = function() {
 }
 
 Drawer.prototype.handleMouseMove = function() {
-  console.log("mouse move")
   var obj = this;
   return function(event){
     if (!event.primary) { return; }
@@ -56,7 +58,6 @@ Drawer.prototype.handleMouseMove = function() {
 }
 
 Drawer.prototype.handleMouseUp = function() {
-  console.log("mouse up")
   var obj = this;
   return function(event){
     if (!event.primary) { return; }
