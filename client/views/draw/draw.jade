@@ -1,0 +1,18 @@
+template(name="draw")
+  .row
+    .col-md-10
+      each colors
+        +color
+    .col-md-2
+      button(
+        type="button",
+        class="btn btn-danger clear pull-right",
+        )
+          |clear draw
+          span(class="glyphicon glyphicon-remove")
+  .row
+    canvas(
+      id="myCanvas",
+      width="960",
+      height="400"
+      )
