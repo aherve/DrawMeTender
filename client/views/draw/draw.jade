@@ -1,21 +1,25 @@
 template(name="draw")
-  .col-md-8
-    .row
-      .col-md-10
-        each colors
-          +color
-      .col-md-2
-        button(
-          type="button",
-          class="btn btn-danger clear pull-right",
+  .row
+    h2 Click & drag to start drawing
+    p Then share it with your friends to see what happens
+  .row
+    .col-md-8
+      .row
+        .col-md-10
+          each colors
+            +color
+        .col-md-2
+          button(
+            type="button",
+            class="btn btn-danger clear pull-right",
+            )
+              |clear draw
+              span(class="glyphicon glyphicon-remove")
+      .row
+        canvas(
+          id="myCanvas",
+          width="960",
+          height="400",
           )
-            |clear draw
-            span(class="glyphicon glyphicon-remove")
-    .row
-      canvas(
-        id="myCanvas",
-        width="960",
-        height="400",
-        )
-  .col-md-4 
-    +chat
+    .col-md-4 
+      +chat
