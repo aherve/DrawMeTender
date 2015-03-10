@@ -1,3 +1,5 @@
+Meteor.subscribe("lines")
+
 Template.draw.events({
   "click .clear": function(){
     draw.clearDraw();
@@ -8,10 +10,31 @@ Template.draw.events({
   }
 })
 
+Template.draw.helpers({
+  lines: function(){
+    return Lines.find({})
+  },
+
+  linesCount: function(){
+    return Lines.find({}).count();
+  }
+
+})
+
 Template.draw.rendered = function(){
   draw = new Drawer('myCanvas');
   draw.init();
 }
+
+Tracker.autorun(function(){
+  lines = Lines.find().fetch();
+  if (typeof draw == 'undefined'){
+    draw = new Drawer('myCanvas',lines);
+  }
+  draw.lines = lines;
+  //draw.init();
+  draw.draw();
+})
 
 Template.draw.helpers({
   "colors": [
