@@ -1,4 +1,4 @@
   Meteor.publish("messages", function(){
-    return Messages.find({});
+    return Messages.find({}, {sort: {createdAt: -1}, limit: 10});
   })
 
