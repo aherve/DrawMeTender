@@ -48,6 +48,7 @@ Template.draw.helpers({
 {value: "#9b4a0b"},
 {value: "#d36600"},
 {value: "#fe8a00"},
-{value: "#f9a71f"}
+{value: "#f9a71f"},
+{value: "#ffffff"},
 ]
 })
