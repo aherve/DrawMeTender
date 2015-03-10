@@ -1,0 +1,9 @@
+.row
+  ul(class="list-group")
+    li(class="list-group-item active")
+      |Le chat (#{messagesCount} messages)
+    li(class="list-group-item")
+      form(class="new-message")
+        input(type="text" name="text" placeholder="Say something" autocomplete="off")
+    each messages
+      +message

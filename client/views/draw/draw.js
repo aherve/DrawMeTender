@@ -22,6 +22,9 @@ Template.draw.helpers({
 })
 
 Template.draw.rendered = function(){
+
+  $("#myCanvas").width('90%');
+
   draw = new Drawer('myCanvas');
   draw.init();
 }
