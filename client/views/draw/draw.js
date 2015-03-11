@@ -36,13 +36,13 @@ Tracker.autorun(function(){
     draw = new Drawer('myCanvas',lines);
   }
 
-  ci = ClearInstructions.findOne({},{sort: {createdAt: -1}});
-  ra = draw.drawed_at;
-  if (!(typeof ci == 'undefined')) {
-    if (typeof ra == 'undefined' || ci.date >= ra){
-      draw.clearDraw();
-    }
-  }
+  //ci = ClearInstructions.findOne({},{sort: {createdAt: -1}});
+  //ra = draw.drawed_at;
+  //if (!(typeof ci == 'undefined')) {
+  //  if (typeof ra == 'undefined' || ci.date >= ra){
+  //    draw.clearDraw();
+  //  }
+  //}
 
   draw.lines = lines;
   draw.draw();
