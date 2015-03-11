@@ -10,3 +10,5 @@ nemo64:bootstrap
 less
 nrafter:createjs
 mquandalle:jade
+accounts-facebook
+accounts-ui
