@@ -5,7 +5,7 @@
     li(class="list-group-item")
       if (currentUser)
         form(class="new-message")
-          input(type="text" name="text" placeholder="Say something" autocomplete="off")
+          input(type="text" name="text" placeholder="Say something" autocomplete="off" style="width:80%")
       else
         | Please login to chat ! 
         +loginButtons
