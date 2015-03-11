@@ -1,5 +1,4 @@
 Meteor.subscribe("lines")
-Meteor.subscribe("clearInstructions")
 
 Template.draw.events({
   "click .clear": function(){
@@ -34,15 +33,8 @@ Tracker.autorun(function(){
   lines = Lines.find().fetch();
   if (typeof draw == 'undefined'){
     draw = new Drawer('myCanvas',lines);
+    draw.init();
   }
-
-  //ci = ClearInstructions.findOne({},{sort: {createdAt: -1}});
-  //ra = draw.drawed_at;
-  //if (!(typeof ci == 'undefined')) {
-  //  if (typeof ra == 'undefined' || ci.date >= ra){
-  //    draw.clearDraw();
-  //  }
-  //}
 
   draw.lines = lines;
   draw.draw();
