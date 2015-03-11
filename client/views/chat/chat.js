@@ -13,7 +13,6 @@ Template.chat.helpers({
 
 Template.chat.events({
   "submit .new-message": function(event){
-    console.log("haha");
     var text = event.target.text.value;
     Meteor.call("postMsg", text);
     event.target.text.value = "";
